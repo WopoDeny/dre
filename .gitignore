@@ -1,0 +1,41 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+benchmark-results/
+.coverage
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+handoff/samples/hires/clean/
+handoff/samples/hires/scan_mild/
+handoff/samples/hires/scan_medium/
+handoff/samples/hires/photo_angle/
+handoff/samples/hires/source/*.pdf
+
+# Run results (DOCX of real documents inside): kept locally, never committed
+handoff/runs/
+
+# Real documents and anything made from them: kept in samples-private.zip next to the project
+handoff/samples/real/
+handoff/samples/real2/
+handoff/samples/real3/
+handoff/samples/generated/
+handoff/samples/expected_reject/
+handoff/samples/native/01_uz_mvd_letter_from_etalon.pdf
+handoff/etalon/
+/*.jpg
+/*.jpeg
+/*.png
+/*.webp
+/*.pdf
+
+# Hires rasters are generated (handoff/tools/make_hires.py) or unpacked from hires-rasters.zip
+handoff/samples/hires/source/*.pdf
+
+# Local settings and caches
+.env
+.mypy_cache/
+*.log

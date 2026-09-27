@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "document-reconstruction-engine"
+version = "0.1.0"
+description = "Local PDF-to-editable-DOCX reconstruction with deadline supervision and benchmark evidence."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "PyMuPDF==1.26.6",
+    "python-docx==1.2.0",
+    "Pillow==12.3.0",
+    "numpy==2.3.5",
+    "scipy==1.17.0",
+    "spylls==0.1.7",
+    "pillow-heif==1.8.0",
+]
+
+[project.optional-dependencies]
+server = ["gunicorn==26.2.0"]
+test = ["reportlab==4.4.9"]
+
+[project.scripts]
+dre-benchmark = "document_reconstruction.benchmark.runner:main"
+dre-convert = "document_reconstruction.cli:main"
+dre-selfcheck = "document_reconstruction.selfcheck:main"
+dre-batch = "document_reconstruction.batch:main"
+dre-summary = "document_reconstruction.batch:summary"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+document_reconstruction = ["py.typed", "selfcheck/*.pdf", "selfcheck/expected.json"]

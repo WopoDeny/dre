@@ -1,0 +1,7 @@
+# Only what the image needs; everything else (samples, runs, venv, git) stays out of the build context.
+*
+!src/
+!pyproject.toml
+!README.md
+!deploy/entrypoint.sh
+**/__pycache__
